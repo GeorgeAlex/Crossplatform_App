@@ -24,16 +24,16 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
-    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%);
+    background-color:#aad0e5;
+    background-image:linear-gradient(top, #cad9e2 0%, #aad0e5 51%);
+    background-image:-webkit-linear-gradient(top, #cad9e2 0%, #aad0e5 51%);
+    background-image:-ms-linear-gradient(top, #cad9e2 0%, #aad0e5 51%);
     background-image:-webkit-gradient(
         linear,
         left top,
         left bottom,
-        color-stop(0, #A7A7A7),
-        color-stop(0.51, #E4E4E4)
+        color-stop(0, #cad9e2),
+        color-stop(0.51, #aad0e5)
     );
     background-attachment:fixed;
     font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
@@ -161,22 +161,49 @@ height: 32px;
 padding: 30px 0px;
 }
 
+.logoDiv {
+background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+background-size: 100%;
+width: 200px;
+height: 200px;
+position:absolute;             /* position in the center of the screen */
+top: 40%;
+left: 50%;
+margin:-100px 0px 0px -95px;
+}
+
 .loginDiv {
 margin-top: 85%;
+margin-left: -50%;
 }
 
 button{
-margin-left: auto;
-margin-right: auto;
-margin-bottom: 30px;
-width: 200px;
-height: 50px;
-border-radius: 4px;
-border-color: #30F;
+border-radius: 20px;
 text-align: center;
 font-size: 30px;
 font-weight:normal;
-display:block;
+}
+
+#SubmitButton {
+width: 120px;
+height: 120px;
+background-image: url(../img/button-image.png);
+background-repeat: no-repeat;
+background-size: 100%;
+margin-top: 20%;
+margin-left: -80px;
+position: absolute;
+}
+
+#RegisterButton {
+width: 120px;
+height: 120px;
+background-image: url(../img/button-image.png);
+background-repeat: no-repeat;
+background-size: 100%;
+margin-top: 20%;
+margin-left: 80px;
+position: absolute;
 }
 
 button:focus { 

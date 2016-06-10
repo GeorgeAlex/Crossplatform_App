@@ -1,6 +1,6 @@
-function someAction(){	
-	alert ("Pressed log in");
+function loadLogIn(){	
+	window.location.href = "login.html";
 }
-function otherAction(){
-	alert ("Pressed register");
+function loadSignUp(){
+	window.location.href = "signup.html";
 }
