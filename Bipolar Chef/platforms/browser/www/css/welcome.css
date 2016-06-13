@@ -1,3 +1,9 @@
+@font-face {
+  font-family: MyWebFont;
+  src: url('../res/fonts/phosphateinline.eot'); /* IE9 Compat Modes */
+  src: url('../res/fonts/phosphateinline.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../res/fonts/phosphateinline.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
 /*
  * Licensed to the Apache Software Foundation (ASF) under one
  * or more contributor license agreements.  See the NOTICE file
@@ -20,30 +26,23 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
-@font-face {
-  font-family: 'MyWebFont';
-  src: url('../res/fonts/phosphateinline.eot'); /* IE9 Compat Modes */
-  src: url('../res/fonts/phosphateinline.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../res/fonts/phosphateinline.ttf')  format('truetype'); /* Safari, Android, iOS */
-}
-
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#aad0e5;
-    background-image:linear-gradient(top, #cad9e2 0%, #aad0e5 51%);
-    background-image:-webkit-linear-gradient(top, #cad9e2 0%, #aad0e5 51%);
-    background-image:-ms-linear-gradient(top, #cad9e2 0%, #aad0e5 51%);
+    background-color:#25b7d3;
+    /*background-image:linear-gradient(top, #25b7d3 0%, #25b7d3 51%);
+    background-image:-webkit-linear-gradient(top, #25b7d3 0%, #25b7d3 51%);
+    background-image:-ms-linear-gradient(top, #25b7d3 0%, #25b7d3 51%);
     background-image:-webkit-gradient(
         linear,
         left top,
         left bottom,
-        color-stop(0, #cad9e2),
-        color-stop(0.51, #aad0e5)
-    );
+        color-stop(0, #25b7d3),
+        color-stop(0.51, #25b7d3)
+    );*/
     background-attachment:fixed;
-    font-family:'MyWebFont';/* 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;*/
+    font-family: MyWebFont;/* 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;*/
     font-size:12px;
     height:100%;
     margin:0px;
@@ -188,12 +187,12 @@ button{
 border-radius: 20px;
 text-align: center;
 font-family: inherit;
-font-size: 30px;
+font-size: 20px;
 font-weight:normal;
 color:#FFF;
 }
 
-#SubmitButton {
+#LocateButton {
 width: 120px;
 height: 120px;
 background-image: url(../img/buttonImage.png);
@@ -204,7 +203,7 @@ margin-left: -80px;
 position: absolute;
 }
 
-#RegisterButton {
+#FaceWapButton {
 width: 120px;
 height: 120px;
 background-image: url(../img/buttonImage.png);

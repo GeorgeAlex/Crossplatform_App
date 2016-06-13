@@ -20,6 +20,13 @@
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
 
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('../res/fonts/phosphateinline.eot'); /* IE9 Compat Modes */
+  src: url('../res/fonts/phosphateinline.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../res/fonts/phosphateinline.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
@@ -36,7 +43,7 @@ body {
         color-stop(0.51, #aad0e5)
     );
     background-attachment:fixed;
-    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-family:'MyWebFont';/* 'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;*/
     font-size:12px;
     height:100%;
     margin:0px;
@@ -180,14 +187,16 @@ margin-left: -50%;
 button{
 border-radius: 20px;
 text-align: center;
+font-family: inherit;
 font-size: 30px;
 font-weight:normal;
+color:#FFF;
 }
 
 #SubmitButton {
 width: 120px;
 height: 120px;
-background-image: url(../img/button-image.png);
+background-image: url(../img/buttonImage.png);
 background-repeat: no-repeat;
 background-size: 100%;
 margin-top: 20%;
@@ -198,7 +207,7 @@ position: absolute;
 #RegisterButton {
 width: 120px;
 height: 120px;
-background-image: url(../img/button-image.png);
+background-image: url(../img/buttonImage.png);
 background-repeat: no-repeat;
 background-size: 100%;
 margin-top: 20%;
