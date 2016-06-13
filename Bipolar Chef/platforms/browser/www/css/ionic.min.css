@@ -10061,6 +10061,7 @@ progress {
 .button.button-positive {
     border-color: #17A6DF;
     background-color: #25a6d9;
+	vertical-align: bottom;
     color: #fff
 }
 
