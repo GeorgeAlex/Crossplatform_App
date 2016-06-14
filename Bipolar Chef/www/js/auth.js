@@ -34,13 +34,18 @@ function logIn(){
 }
 
 //signup function
-$("#signup").click(function(){
-	var fullname=$("#fullname").val();
+function signUp(){
+	var username=$("#username").val();
 	var email=$("#email").val();
 	var password=$("#password").val();
-	var dataString="fullname="+fullname+"&email="+email+"&password="+password+"&signup=";
+	var repeatPassword=$("#repeatPassword").val();
+	var firstName=$("#firstName").val();
+	var lastName=$("#lastName").val();
+	var phoneNr=$("#phoneNr").val();
+	//var dataString="fullname="+fullname+"&email="+email+"&password="+password+"&signup=";
+	var dataString="username="+username+"&email="+email+"&password="+password+"&firstName="+firstName+"&lastName="+lastName+"&phoneNr="+phoneNr+"&signup=";
 
-	if($.trim(fullname).length>0 & $.trim(email).length>0 & $.trim(password).length>0)
+	if($.trim(username).length>0 & $.trim(email).length>0 & $.trim(password).length>0 & $.trim(firstName).length>0 & $.trim(lastName).length>0 & $.trim(phoneNr).length>0)
 	{
 		$.ajax({
 			type: "POST",
@@ -48,11 +53,13 @@ $("#signup").click(function(){
 			data: dataString,
 			crossDomain: true,
 			cache: false,
-			beforeSend: function(){ $("#signup").val('Connecting...');},
+			beforeSend: function(){ $("#signUp").val('Creating account...');},
 			success: function(data){
 				if(data=="success")
 				{
-					alert("Thank you for Registering with us! you can login now");
+					localStorage.login="true";
+					localStorage.email=email;
+					window.location.href = "welcome.html";
 				}
 				else if(data="exist")
 				{
@@ -66,7 +73,7 @@ $("#signup").click(function(){
 		});
 	}return false;
 
-});
+}
 
 //Change Password
 $("#change_password").click(function(){
