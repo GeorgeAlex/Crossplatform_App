@@ -1,36 +1,34 @@
 var url="http://georgestoian.co.uk/auth.php/auth.php?callback=?";
 
 //Login Function
-function logIn(){
-	if(event.keyCode == 13) {        
-		var email=$("#email").val();
-		var password=$("#password").val();
-		var dataString="email="+email+"&password="+password+"&login=";
-		if($.trim(email).length>0 & $.trim(password).length>0)
-		{
-			$.ajax({
-				type: "POST",
-				url: url,
-				data: dataString,
-				crossDomain: true,
-				cache: false,
-				beforeSend: function(){ $("#login").html('Connecting...');},
-				success: function(data){
-					if(data=="success")
-					{
-						localStorage.login="true";
-						localStorage.email=email;
-						window.location.href = "welcome.html";
-					}
-					else if(data="failed")
-					{
-						alert("Login error");
-						$("#login").html('Login');
-					}
+function logIn(){	      
+	var email=$("#email").val();
+	var password=$("#password").val();
+	var dataString="email="+email+"&password="+password+"&login=";
+	if($.trim(email).length>0 & $.trim(password).length>0)
+	{
+		$.ajax({
+			type: "POST",
+			url: url,
+			data: dataString,
+			crossDomain: true,
+			cache: false,
+			beforeSend: function(){ $("#login").html('Connecting...');},
+			success: function(data){
+				if(data=="success")
+				{
+					localStorage.login="true";
+					localStorage.email=email;
+					window.location.href = "welcome.html";
 				}
-			});
-		}return false;
-	}
+				else if(data="failed")
+				{
+					alert("Login error");
+					$("#login").html('Login');
+				}
+			}
+		});
+	}return false;
 }
 
 //signup function
@@ -45,7 +43,7 @@ function signUp(){
 	//var dataString="fullname="+fullname+"&email="+email+"&password="+password+"&signup=";
 	var dataString="username="+username+"&email="+email+"&password="+password+"&firstName="+firstName+"&lastName="+lastName+"&phoneNr="+phoneNr+"&signup=";
 
-	if($.trim(username).length>0 & $.trim(email).length>0 & $.trim(password).length>0 & $.trim(firstName).length>0 & $.trim(lastName).length>0 & $.trim(phoneNr).length>0)
+	if($.trim(username).length>0 & $.trim(email).length>0 & $.trim(password).length>7 & $.trim(firstName).length>0 & $.trim(lastName).length>0 & $.trim(phoneNr).length>0)
 	{
 		$.ajax({
 			type: "POST",
@@ -61,11 +59,19 @@ function signUp(){
 					localStorage.email=email;
 					window.location.href = "welcome.html";
 				}
-				else if(data="exist")
+				else if(data=="exist")
 				{
 					alert("Hey! You alreay has account! you can login with us");
 				}
-				else if(data="failed")
+				else if (data=="email exists")
+				{
+					alert("There is already an account created with this email");
+				}
+				else if (data=="username exists")
+				{
+					alert("The chosen username is already taken");
+				}
+				else if(data=="failed")
 				{
 					alert("Something Went wrong");
 				}
